@@ -8,8 +8,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TCC">
 
+        <!-- Tela principal do TCCArduino -->
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Tela Splash: primeira tela a abrir -->
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
 
             <intent-filter>
