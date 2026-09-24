@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnMenu" type="id" />
+    <item name="menuHome" type="id" />
+    <item name="menuPerfil" type="id" />
+    <item name="btnMenuPerfil" type="id" />
+    <item name="main" type="id" />
+</resources>

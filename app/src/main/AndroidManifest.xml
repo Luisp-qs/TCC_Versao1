@@ -10,7 +10,7 @@
 
         <!-- Tela principal do TCCArduino -->
         <activity
-            android:name=".MainActivity"
+            android:name=".CadastroActivity"
             android:exported="false" />
 
         <!-- Tela Splash: primeira tela a abrir -->
