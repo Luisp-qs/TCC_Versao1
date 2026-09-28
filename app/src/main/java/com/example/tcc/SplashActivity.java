@@ -24,8 +24,8 @@ public class SplashActivity extends AppCompatActivity {
         videoView.setVideoURI(videoUri);
 
         // Zoom na animação
-        videoView.setScaleX(1.33f);
-        videoView.setScaleY(1.33f);
+        videoView.setScaleX(1f);
+        videoView.setScaleY(1f);
 
         videoView.start();
 

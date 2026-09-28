@@ -21,7 +21,7 @@
             android:id="@+id/imgLogo"
             android:layout_width="280dp"
             android:layout_height="220dp"
-            android:src="@drawable/logo_balance_tech_cortada"
+            android:src="@drawable/logobalance"
             android:scaleType="fitCenter"
             android:contentDescription="Logo Balance Tech" />
 
