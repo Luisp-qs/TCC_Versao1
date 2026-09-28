@@ -43,6 +43,7 @@
             android:layout_height="1dp"
             android:background="#E5E5E5" />
 
+        <!-- HOME -->
         <LinearLayout
             android:id="@+id/menuHome"
             android:layout_width="match_parent"
@@ -68,11 +69,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Home"
-                android:textColor="#333333"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
+        <!-- CONECTE A BALANÇA -->
         <LinearLayout
             android:id="@+id/menuBalanca"
             android:layout_width="match_parent"
@@ -98,11 +100,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Conecte a balança"
-                android:textColor="#333333"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
+        <!-- MONTE SEU PRATO -->
         <LinearLayout
             android:id="@+id/menuMontePrato"
             android:layout_width="match_parent"
@@ -128,11 +131,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Monte seu prato"
-                android:textColor="#333333"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
+        <!-- HISTÓRICO -->
         <LinearLayout
             android:id="@+id/menuHistorico"
             android:layout_width="match_parent"
@@ -158,11 +162,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Histórico"
-                android:textColor="#333333"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
+        <!-- EVOLUÇÃO -->
         <LinearLayout
             android:id="@+id/menuEvolucao"
             android:layout_width="match_parent"
@@ -188,11 +193,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Evolução"
-                android:textColor="#333333"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
+        <!-- PERFIL -->
         <LinearLayout
             android:id="@+id/menuPerfil"
             android:layout_width="match_parent"
@@ -218,20 +224,41 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="Perfil"
-                android:textColor="#333333"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
-        <Button
+        <!-- SOBRE NÓS -->
+        <LinearLayout
             android:id="@+id/btnSobreNos"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="17dp"
-            android:text="Sobre nós"
-            android:textSize="15sp"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#7EAD8B" />
+            android:layout_marginTop="7dp"
+            android:background="@drawable/menu_item_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/ic_sobre_nos"
+                android:scaleType="fitCenter"
+                android:contentDescription="Sobre nós" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Sobre nós"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
