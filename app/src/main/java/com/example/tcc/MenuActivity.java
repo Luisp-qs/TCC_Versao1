@@ -1,9 +1,7 @@
 package com.example.tcc;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MenuActivity extends AppCompatActivity {
 
     private LinearLayout menuHome;
+    private LinearLayout menuBalanca;
+    private LinearLayout menuRefeicoes;
     private LinearLayout menuPerfil;
     private LinearLayout btnSobreNos;
+    private LinearLayout menuEvolucao;
+    private LinearLayout menuHistorico;
 
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         // =========================
         // HOME
         // =========================
+
         menuHome = findViewById(R.id.menuHome);
 
         menuHome.setOnClickListener(v -> {
@@ -39,8 +41,44 @@ public class MenuActivity extends AppCompatActivity {
 
 
         // =========================
+        // CONECTAR À BALANÇA
+        // =========================
+
+        menuBalanca = findViewById(R.id.menuBalanca);
+
+        menuBalanca.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    MenuActivity.this,
+                    ConexaoActivity.class
+            );
+
+            startActivity(intent);
+        });
+
+
+        // =========================
+        // REFEIÇÕES
+        // =========================
+
+        menuRefeicoes = findViewById(R.id.menuRefeicoes);
+
+        menuRefeicoes.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    MenuActivity.this,
+                    RefeicoesActivity.class
+            );
+
+            startActivity(intent);
+            finish();
+        });
+
+
+        // =========================
         // PERFIL
         // =========================
+
         menuPerfil = findViewById(R.id.menuPerfil);
 
         menuPerfil.setOnClickListener(v -> {
@@ -58,6 +96,7 @@ public class MenuActivity extends AppCompatActivity {
         // =========================
         // SOBRE NÓS
         // =========================
+
         btnSobreNos = findViewById(R.id.btnSobreNos);
 
         btnSobreNos.setOnClickListener(v -> {
@@ -65,6 +104,33 @@ public class MenuActivity extends AppCompatActivity {
             Intent intent = new Intent(
                     MenuActivity.this,
                     SobreNosActivity.class
+            );
+
+            startActivity(intent);
+            finish();
+        });
+
+        // EVOLUÇÃO
+        menuEvolucao = findViewById(R.id.menuEvolucao);
+
+        menuEvolucao.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    MenuActivity.this,
+                    EvolucaoActivity.class
+            );
+
+            startActivity(intent);
+            finish();
+        });
+
+        // HISTÓRICO
+        menuHistorico = findViewById(R.id.menuHistorico);
+
+        menuHistorico.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    MenuActivity.this,
+                    HistoricoActivity.class
             );
 
             startActivity(intent);
