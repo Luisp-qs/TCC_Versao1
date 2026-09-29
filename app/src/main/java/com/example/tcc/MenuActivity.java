@@ -1,5 +1,6 @@
 package com.example.tcc;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -22,14 +23,12 @@ public class MenuActivity extends AppCompatActivity {
     private LinearLayout menuHistorico;
     private LinearLayout menuMontePrato;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // Tema do menu
         setTheme(R.style.Theme_TCC_Menu);
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_menu);
 
         // =====================================================
@@ -38,38 +37,39 @@ public class MenuActivity extends AppCompatActivity {
 
         Window window = getWindow();
 
-        // Fundo transparente
         window.setBackgroundDrawable(
                 new ColorDrawable(Color.TRANSPARENT)
         );
 
-        // Escurece a tela que está atrás
         window.addFlags(
                 WindowManager.LayoutParams.FLAG_DIM_BEHIND
         );
 
-        WindowManager.LayoutParams params =
-                window.getAttributes();
+        WindowManager.LayoutParams params = window.getAttributes();
 
-        // Escurecimento
+        // Escurecimento da tela atrás do menu
         params.dimAmount = 0.35f;
 
-        // Metade da largura da tela
+        // A janela precisa ocupar a tela inteira para que
+        // a área fora do painel possa receber o toque.
         params.width =
-                getResources()
-                        .getDisplayMetrics()
-                        .widthPixels / 2;
+                WindowManager.LayoutParams.MATCH_PARENT;
 
-        // Toda a altura
         params.height =
                 WindowManager.LayoutParams.MATCH_PARENT;
 
-        // Canto superior esquerdo
         params.gravity =
                 Gravity.START | Gravity.TOP;
 
         window.setAttributes(params);
 
+        // =====================================================
+        // TOQUE FORA DO MENU
+        // =====================================================
+
+        findViewById(R.id.menuFora).setOnClickListener(v -> {
+            finish();
+        });
 
         // =====================================================
         // HOME
@@ -78,16 +78,13 @@ public class MenuActivity extends AppCompatActivity {
         menuHome = findViewById(R.id.menuHome);
 
         menuHome.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     HomeActivity.class
             );
-
             startActivity(intent);
             finish();
         });
-
 
         // =====================================================
         // BALANÇA
@@ -96,16 +93,13 @@ public class MenuActivity extends AppCompatActivity {
         menuBalanca = findViewById(R.id.menuBalanca);
 
         menuBalanca.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     ConexaoActivity.class
             );
-
             startActivity(intent);
             finish();
         });
-
 
         // =====================================================
         // REFEIÇÕES
@@ -114,16 +108,13 @@ public class MenuActivity extends AppCompatActivity {
         menuRefeicoes = findViewById(R.id.menuRefeicoes);
 
         menuRefeicoes.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     RefeicoesActivity.class
             );
-
             startActivity(intent);
             finish();
         });
-
 
         // =====================================================
         // PERFIL
@@ -132,16 +123,13 @@ public class MenuActivity extends AppCompatActivity {
         menuPerfil = findViewById(R.id.menuPerfil);
 
         menuPerfil.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     PerfilActivity.class
             );
-
             startActivity(intent);
             finish();
         });
-
 
         // =====================================================
         // SOBRE NÓS
@@ -150,16 +138,13 @@ public class MenuActivity extends AppCompatActivity {
         btnSobreNos = findViewById(R.id.btnSobreNos);
 
         btnSobreNos.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     SobreNosActivity.class
             );
-
             startActivity(intent);
             finish();
         });
-
 
         // =====================================================
         // EVOLUÇÃO
@@ -168,16 +153,13 @@ public class MenuActivity extends AppCompatActivity {
         menuEvolucao = findViewById(R.id.menuEvolucao);
 
         menuEvolucao.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     EvolucaoActivity.class
             );
-
             startActivity(intent);
             finish();
         });
-
 
         // =====================================================
         // HISTÓRICO
@@ -186,29 +168,25 @@ public class MenuActivity extends AppCompatActivity {
         menuHistorico = findViewById(R.id.menuHistorico);
 
         menuHistorico.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     HistoricoActivity.class
             );
-
             startActivity(intent);
             finish();
         });
 
-        // =========================
-// MONTE SEU PRATO
-// =========================
+        // =====================================================
+        // MONTE SEU PRATO
+        // =====================================================
 
         menuMontePrato = findViewById(R.id.menuMontePrato);
 
         menuMontePrato.setOnClickListener(v -> {
-
             Intent intent = new Intent(
                     MenuActivity.this,
                     MontePratoActivity.class
             );
-
             startActivity(intent);
             finish();
         });

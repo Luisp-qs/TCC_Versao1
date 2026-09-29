@@ -194,14 +194,37 @@
         <!-- BANNER -->
         <!-- ===================== -->
 
-        <ImageView
-            android:id="@+id/imgBanner"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="155dp"
-            android:contentDescription="Bem-vindo ao Balance Tech"
-            android:scaleType="centerCrop"
-            android:src="@drawable/banner_home" />
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:clipToOutline="true"
+            android:background="@drawable/banner_background">
 
+            <ImageView
+                android:id="@+id/imgBanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Bem-vindo ao Balance Tech"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_home"
+                android:clipToOutline="true"
+                android:background="@drawable/banner_background" />
+
+            <!-- Área clicável sobre "Monte seu prato" -->
+            <View
+                android:id="@+id/btnBannerMontePrato"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="18dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </FrameLayout>
 
         <!-- ===================== -->
         <!-- HOJE -->
