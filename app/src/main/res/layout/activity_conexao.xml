@@ -8,22 +8,34 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
+    <!-- ========================= -->
     <!-- CABEÇALHO -->
+    <!-- ========================= -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <!-- MENU -->
 
         <ImageButton
-            android:id="@+id/btnVoltar"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:id="@+id/btnMenu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:background="@android:color/transparent"
+            android:contentDescription="Abrir menu"
             android:padding="8dp"
-            android:src="@android:drawable/ic_media_previous"
-            android:contentDescription="Voltar" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_menu"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+        <!-- TÍTULO -->
 
         <TextView
             android:id="@+id/titulo"
@@ -35,15 +47,38 @@
             android:textSize="21sp"
             android:textStyle="bold" />
 
+
+        <!-- PERFIL -->
+
+        <ImageButton
+            android:id="@+id/btnPerfilConexao"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="Abrir perfil"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_perfil_home"
+            android:clickable="true"
+            android:focusable="true" />
+
     </RelativeLayout>
 
+
     <!-- LINHA -->
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#EEEEEE" />
 
+
+    <!-- ========================= -->
     <!-- INSTRUÇÕES -->
+    <!-- ========================= -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -69,6 +104,7 @@
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -97,6 +134,7 @@
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,6 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -125,6 +164,7 @@
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,6 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -153,6 +194,7 @@
                 android:layout_height="1dp"
                 android:background="#EEEEEE" />
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,7 +208,11 @@
 
     </ScrollView>
 
+
+    <!-- ========================= -->
     <!-- BOTÃO -->
+    <!-- ========================= -->
+
     <LinearLayout
         android:id="@+id/areaBotao"
         android:layout_width="match_parent"
@@ -185,6 +231,7 @@
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textAllCaps="false"
             android:backgroundTint="#5BA55B" />
 
     </LinearLayout>

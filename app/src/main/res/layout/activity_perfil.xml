@@ -8,18 +8,58 @@
     android:background="#FFFFFF"
     tools:context=".PerfilActivity">
 
+    <!-- ========================= -->
+    <!-- BARRA SUPERIOR -->
+    <!-- ========================= -->
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Abrir menu"
+        android:padding="10dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnPerfil"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Perfil"
+        android:padding="6dp"
+        android:src="@drawable/ic_perfil_grande"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- ========================= -->
+    <!-- TÍTULO -->
+    <!-- ========================= -->
+
     <TextView
         android:id="@+id/tvTituloPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="Meu Perfil"
         android:textColor="#000000"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btnMenu" />
+
+
+    <!-- ========================= -->
+    <!-- FOTO DE PERFIL -->
+    <!-- ========================= -->
 
     <ImageView
         android:id="@+id/imgPerfil"
@@ -32,6 +72,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTituloPerfil" />
+
+
+    <!-- ========================= -->
+    <!-- NOME -->
+    <!-- ========================= -->
 
     <TextView
         android:id="@+id/tvNomeLabel"
@@ -62,6 +107,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNomeLabel" />
 
+
+    <!-- ========================= -->
+    <!-- E-MAIL -->
+    <!-- ========================= -->
+
     <TextView
         android:id="@+id/tvEmailLabel"
         android:layout_width="0dp"
@@ -90,7 +140,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEmailLabel" />
 
+
+    <!-- ========================= -->
     <!-- EDITAR PERFIL -->
+    <!-- ========================= -->
+
     <android.widget.Button
         android:id="@+id/btnEditarPerfil"
         android:layout_width="0dp"
@@ -109,7 +163,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEmail" />
 
+
+    <!-- ========================= -->
     <!-- SAIR PARA HOME -->
+    <!-- ========================= -->
+
     <android.widget.Button
         android:id="@+id/btnSair"
         android:layout_width="0dp"
@@ -128,7 +186,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnEditarPerfil" />
 
+
+    <!-- ========================= -->
     <!-- SAIR DA CONTA -->
+    <!-- ========================= -->
+
     <android.widget.Button
         android:id="@+id/btnSairConta"
         android:layout_width="0dp"

@@ -61,7 +61,8 @@
 
         <activity
             android:name=".MenuActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme_TCC_Menu" />
 
 
         <!-- ========================= -->
@@ -112,6 +113,14 @@
 
         <activity
             android:name=".HistoricoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- MONTEPRATO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".MontePratoActivity"
             android:exported="false" />
 
     </application>

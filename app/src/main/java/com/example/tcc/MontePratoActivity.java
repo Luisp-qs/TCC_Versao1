@@ -6,16 +6,16 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RefeicoesActivity extends AppCompatActivity {
+public class MontePratoActivity extends AppCompatActivity {
 
     private ImageButton btnMenu;
-    private ImageButton btnPerfilRefeicoes;
+    private ImageButton btnPerfilMontePrato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_refeicoes);
+        setContentView(R.layout.activity_monte_prato);
 
         // =========================
         // MENU
@@ -26,12 +26,11 @@ public class RefeicoesActivity extends AppCompatActivity {
         btnMenu.setOnClickListener(v -> {
 
             Intent intent = new Intent(
-                    RefeicoesActivity.this,
+                    MontePratoActivity.this,
                     MenuActivity.class
             );
 
-            // NÃO usar finish() aqui.
-            // A tela de Refeições deve continuar atrás do menu.
+            // Não fechar o Monte seu prato.
             startActivity(intent);
         });
 
@@ -40,12 +39,12 @@ public class RefeicoesActivity extends AppCompatActivity {
         // PERFIL
         // =========================
 
-        btnPerfilRefeicoes = findViewById(R.id.btnPerfilRefeicoes);
+        btnPerfilMontePrato = findViewById(R.id.btnPerfilMontePrato);
 
-        btnPerfilRefeicoes.setOnClickListener(v -> {
+        btnPerfilMontePrato.setOnClickListener(v -> {
 
             Intent intent = new Intent(
-                    RefeicoesActivity.this,
+                    MontePratoActivity.this,
                     PerfilActivity.class
             );
 

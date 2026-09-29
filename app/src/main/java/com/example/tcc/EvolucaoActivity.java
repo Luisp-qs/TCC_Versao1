@@ -31,7 +31,6 @@ public class EvolucaoActivity extends AppCompatActivity {
             );
 
             startActivity(intent);
-            finish();
         });
 
 
@@ -39,7 +38,8 @@ public class EvolucaoActivity extends AppCompatActivity {
         // PERFIL
         // =========================
 
-        btnPerfilEvolucao = findViewById(R.id.btnPerfilEvolucao);
+        btnPerfilEvolucao =
+                findViewById(R.id.btnPerfilEvolucao);
 
         btnPerfilEvolucao.setOnClickListener(v -> {
 

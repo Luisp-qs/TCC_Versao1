@@ -17,23 +17,33 @@ public class SobreNosActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_sobre_nos);
 
+        // =========================
         // MENU
+        // =========================
+
         btnMenu = findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(v -> {
+
             Intent intent = new Intent(
                     SobreNosActivity.this,
                     MenuActivity.class
             );
 
+            // NÃO usar finish() aqui.
+            // A tela Sobre Nós deve continuar atrás do menu.
             startActivity(intent);
-            finish();
         });
 
+
+        // =========================
         // PERFIL
+        // =========================
+
         btnPerfilSobreNos = findViewById(R.id.btnPerfilSobreNos);
 
         btnPerfilSobreNos.setOnClickListener(v -> {
+
             Intent intent = new Intent(
                     SobreNosActivity.this,
                     PerfilActivity.class

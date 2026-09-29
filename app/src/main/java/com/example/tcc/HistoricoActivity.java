@@ -30,8 +30,9 @@ public class HistoricoActivity extends AppCompatActivity {
                     MenuActivity.class
             );
 
+            // Não usar finish().
+            // O Histórico continua atrás do menu.
             startActivity(intent);
-            finish();
         });
 
 
