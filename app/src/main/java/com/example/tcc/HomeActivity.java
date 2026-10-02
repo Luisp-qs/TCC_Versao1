@@ -17,10 +17,13 @@ public class HomeActivity extends AppCompatActivity {
     private LinearLayout btnEvolucao;
     private LinearLayout btnMontePrato;
 
+    private LinearLayout cardCarboidratos;
+    private LinearLayout cardProteina;
+    private LinearLayout cardGordura;
+
     private LinearLayout cardJejum;
     private LinearLayout cardMassaMagra;
 
-    // Botão transparente sobre o banner
     private View btnBannerMontePrato;
 
     @Override
@@ -28,7 +31,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
-
 
         // =========================
         // BOTÃO MENU
@@ -46,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
         // =========================
         // BOTÃO PERFIL
         // =========================
@@ -62,7 +63,6 @@ public class HomeActivity extends AppCompatActivity {
 
             startActivity(intent);
         });
-
 
         // =========================
         // HISTÓRICO
@@ -80,7 +80,6 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
         // =========================
         // EVOLUÇÃO
         // =========================
@@ -96,7 +95,6 @@ public class HomeActivity extends AppCompatActivity {
 
             startActivity(intent);
         });
-
 
         // =========================
         // MONTE SEU PRATO
@@ -114,12 +112,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
         // =========================
         // MONTE SEU PRATO - BANNER
         // =========================
 
-        btnBannerMontePrato = findViewById(R.id.btnBannerMontePrato);
+        btnBannerMontePrato =
+                findViewById(R.id.btnBannerMontePrato);
 
         btnBannerMontePrato.setOnClickListener(v -> {
 
@@ -131,6 +129,71 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // =========================
+        // CARBOIDRATOS
+        // =========================
+
+        cardCarboidratos =
+                findViewById(R.id.cardCarboidratos);
+
+        cardCarboidratos.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    HomeActivity.this,
+                    EvolucaoActivity.class
+            );
+
+            intent.putExtra(
+                    "grafico",
+                    "carboidratos"
+            );
+
+            startActivity(intent);
+        });
+
+        // =========================
+        // PROTEÍNAS
+        // =========================
+
+        cardProteina =
+                findViewById(R.id.cardProteina);
+
+        cardProteina.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    HomeActivity.this,
+                    EvolucaoActivity.class
+            );
+
+            intent.putExtra(
+                    "grafico",
+                    "proteinas"
+            );
+
+            startActivity(intent);
+        });
+
+        // =========================
+        // GORDURAS
+        // =========================
+
+        cardGordura =
+                findViewById(R.id.cardGordura);
+
+        cardGordura.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    HomeActivity.this,
+                    EvolucaoActivity.class
+            );
+
+            intent.putExtra(
+                    "grafico",
+                    "gorduras"
+            );
+
+            startActivity(intent);
+        });
 
         // =========================
         // CARD JEJUM
@@ -144,18 +207,17 @@ public class HomeActivity extends AppCompatActivity {
 
         });
 
-
         // =========================
         // CARD MASSA MAGRA
         // =========================
 
-        cardMassaMagra = findViewById(R.id.cardMassaMagra);
+        cardMassaMagra =
+                findViewById(R.id.cardMassaMagra);
 
         cardMassaMagra.setOnClickListener(v -> {
 
             // Conteúdo sobre massa magra será conectado posteriormente.
 
         });
-
     }
 }

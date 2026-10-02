@@ -2,18 +2,18 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:paddingTop="20dp"
         android:paddingBottom="30dp">
 
@@ -26,8 +26,6 @@
             android:layout_height="60dp"
             android:layout_marginBottom="10dp">
 
-            <!-- MENU - ESQUERDA -->
-
             <ImageButton
                 android:id="@+id/btnMenu"
                 android:layout_width="40dp"
@@ -39,20 +37,14 @@
                 android:padding="6dp"
                 android:src="@drawable/ic_menu" />
 
-
-            <!-- TÍTULO -->
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Evolução"
                 android:textColor="#222222"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
-
-
-            <!-- PERFIL - DIREITA -->
 
             <ImageButton
                 android:id="@+id/btnPerfilEvolucao"
@@ -69,168 +61,155 @@
 
 
         <!-- ========================= -->
-        <!-- CATEGORIAS -->
-        <!-- ========================= -->
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/btnCalorias"
-                    android:layout_width="125dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/bg_botao_categoria_selecionado"
-                    android:gravity="center"
-                    android:text="Calorias"
-                    android:textColor="#FFFFFF"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btnGorduras"
-                    android:layout_width="135dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="12dp"
-                    android:background="@drawable/bg_botao_categoria"
-                    android:gravity="center"
-                    android:text="Gorduras"
-                    android:textColor="#356B43"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btnProteinas"
-                    android:layout_width="135dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="12dp"
-                    android:background="@drawable/bg_botao_categoria"
-                    android:gravity="center"
-                    android:text="Proteínas"
-                    android:textColor="#356B43"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-
-        <!-- ========================= -->
-        <!-- CARDS META E ATUAL -->
-        <!-- ========================= -->
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <!-- META -->
-
-                <LinearLayout
-                    android:layout_width="330dp"
-                    android:layout_height="215dp"
-                    android:background="@drawable/bg_card_evolucao"
-                    android:orientation="vertical"
-                    android:padding="25dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Meta"
-                        android:textColor="#222222"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtMeta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="3.000 Kcal"
-                        android:textColor="#111111"
-                        android:textSize="38sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="para atingir seu objetivo"
-                        android:textColor="#999999"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
-
-
-                <!-- ATUAL -->
-
-                <LinearLayout
-                    android:layout_width="330dp"
-                    android:layout_height="215dp"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/bg_card_evolucao"
-                    android:orientation="vertical"
-                    android:padding="25dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Atual"
-                        android:textColor="#222222"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtAtual"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="2.885 Kcal"
-                        android:textColor="#111111"
-                        android:textSize="38sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="já consumido"
-                        android:textColor="#999999"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
-
-        <!-- ========================= -->
-        <!-- TÍTULO DO GRÁFICO -->
+        <!-- CALORIAS -->
         <!-- ========================= -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:text="Calorias"
             android:textColor="#222222"
-            android:textSize="21sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtCalorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="2.885 / 3.000 Kcal"
+            android:textColor="#777777"
+            android:textSize="13sp" />
+
+        <ProgressBar
+            android:id="@+id/progressCalorias"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="5dp"
+            android:max="100"
+            android:progress="96"
+            android:progressDrawable="@drawable/progress_green" />
+
+
+        <!-- ========================= -->
+        <!-- NUTRIENTES -->
+        <!-- ========================= -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Nutrientes"
+            android:textColor="#222222"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- ========================= -->
+        <!-- BOTÕES -->
+        <!-- ========================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/btnCarbs"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:gravity="center"
+                android:text="Carbs"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/menu_item_background"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnGorduras"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:gravity="center"
+                android:text="Gordura"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/menu_item_background"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/btnProteinas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:gravity="center"
+                android:text="Proteína"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/menu_item_background"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+
+        <!-- ========================= -->
+        <!-- META / ATUAL -->
+        <!-- ========================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meta: "
+                android:textColor="#777777"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txtMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="349 g"
+                android:textColor="#222222"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:text="Atual: "
+                android:textColor="#777777"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txtAtual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="211 g"
+                android:textColor="#222222"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
 
         <!-- ========================= -->
@@ -240,53 +219,9 @@
         <com.example.tcc.GraficoEvolucaoView
             android:id="@+id/graficoEvolucao"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_grafico"
-            tools:ignore="MissingClass" />
-
-
-        <!-- ========================= -->
-        <!-- DIAS DE SEQUÊNCIA -->
-        <!-- ========================= -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/bg_grafico"
-            android:orientation="vertical"
-            android:padding="25dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dias de sequência"
-                android:textColor="#222222"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtSequencia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="70"
-                android:textColor="#6ACB35"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imgMascote"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:contentDescription="Mascote"
-                android:scaleType="centerCrop"
-                android:src="@drawable/mascote" />
-
-        </LinearLayout>
+            android:layout_height="380dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp" />
 
     </LinearLayout>
 

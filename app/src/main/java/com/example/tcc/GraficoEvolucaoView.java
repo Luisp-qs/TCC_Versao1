@@ -2,7 +2,6 @@ package com.example.tcc;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
@@ -15,34 +14,21 @@ public class GraficoEvolucaoView extends View {
     private Paint paintTexto;
     private Paint paintPonto;
 
-    private float[] valores = {
-            400,
-            1800,
-            1500,
-            1500,
-            800,
-            1100,
-            1400,
-            1700,
-            1650,
-            2200,
-            1500,
-            2400,
-            2100,
-            2900
-    };
+    private float[] valores;
+    private String[] dias;
 
-    private String[] dias = {
-            "S", "S", "T", "Q", "Q", "S", "S",
-            "D", "S", "T", "Q", "Q", "S", "D"
-    };
+    private String unidade = "g";
+    private float valorMaximo = 349f;
 
     public GraficoEvolucaoView(Context context) {
         super(context);
         inicializar();
     }
 
-    public GraficoEvolucaoView(Context context, AttributeSet attrs) {
+    public GraficoEvolucaoView(
+            Context context,
+            AttributeSet attrs
+    ) {
         super(context, attrs);
         inicializar();
     }
@@ -50,67 +36,53 @@ public class GraficoEvolucaoView extends View {
     public GraficoEvolucaoView(
             Context context,
             AttributeSet attrs,
-            int defStyleAttr) {
-
+            int defStyleAttr
+    ) {
         super(context, attrs, defStyleAttr);
         inicializar();
     }
 
     private void inicializar() {
 
-        // =========================
-        // LINHA DO GRÁFICO
-        // =========================
-
-        paintLinha = new Paint();
-        paintLinha.setColor(Color.rgb(39, 170, 100));
-        paintLinha.setStrokeWidth(6);
+        paintLinha = new Paint(Paint.ANTI_ALIAS_FLAG);
         paintLinha.setStyle(Paint.Style.STROKE);
-        paintLinha.setAntiAlias(true);
+        paintLinha.setStrokeWidth(5f);
 
+        paintGrade = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paintGrade.setStyle(Paint.Style.STROKE);
+        paintGrade.setStrokeWidth(1f);
+        paintGrade.setColor(0xFFD9D9D9);
 
-        // =========================
-        // GRADE
-        // =========================
+        paintTexto = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paintTexto.setColor(0xFF222222);
 
-        paintGrade = new Paint();
-        paintGrade.setColor(Color.rgb(235, 235, 235));
-        paintGrade.setStrokeWidth(2);
-
-
-        // =========================
-        // TEXTOS
-        // =========================
-
-        paintTexto = new Paint();
-        paintTexto.setColor(Color.rgb(150, 150, 150));
-        paintTexto.setTextSize(28);
-        paintTexto.setAntiAlias(true);
-
-
-        // =========================
-        // PONTOS
-        // =========================
-
-        paintPonto = new Paint();
-        paintPonto.setColor(Color.rgb(39, 170, 100));
+        paintPonto = new Paint(Paint.ANTI_ALIAS_FLAG);
         paintPonto.setStyle(Paint.Style.FILL);
-        paintPonto.setAntiAlias(true);
-    }
 
+        dias = new String[]{
+                "S", "S", "T", "Q", "Q", "S", "S",
+                "D", "S", "T", "Q", "Q", "S", "D"
+        };
+
+        mostrarCarbs();
+    }
 
     @Override
     protected void onDraw(Canvas canvas) {
 
         super.onDraw(canvas);
 
+        if (valores == null || valores.length == 0) {
+            return;
+        }
+
         float largura = getWidth();
         float altura = getHeight();
 
-        float margemEsquerda = 75;
-        float margemDireita = 30;
-        float margemSuperior = 50;
-        float margemInferior = 70;
+        float margemEsquerda = 75f;
+        float margemDireita = 30f;
+        float margemSuperior = 35f;
+        float margemInferior = 60f;
 
         float larguraGrafico =
                 largura - margemEsquerda - margemDireita;
@@ -118,28 +90,24 @@ public class GraficoEvolucaoView extends View {
         float alturaGrafico =
                 altura - margemSuperior - margemInferior;
 
+        if (larguraGrafico <= 0 || alturaGrafico <= 0) {
+            return;
+        }
 
         // =========================
-        // LINHAS HORIZONTAIS
+        // GRADE
         // =========================
 
-        int[] niveis = {
-                3000,
-                2500,
-                2000,
-                1500,
-                1000,
-                500
-        };
+        int quantidadeNiveis = 6;
 
-        for (int i = 0; i < niveis.length; i++) {
+        for (int i = 0; i < quantidadeNiveis; i++) {
 
-            float porcentagem =
-                    (float) i / (niveis.length - 1);
+            float proporcao =
+                    (float) i / (quantidadeNiveis - 1);
 
             float y =
                     margemSuperior +
-                            porcentagem * alturaGrafico;
+                            (alturaGrafico * proporcao);
 
             canvas.drawLine(
                     margemEsquerda,
@@ -149,32 +117,62 @@ public class GraficoEvolucaoView extends View {
                     paintGrade
             );
 
+            float valorNivel =
+                    valorMaximo -
+                            (valorMaximo * proporcao);
+
+            String textoNivel =
+                    formatarValor(valorNivel) + " " + unidade;
+
+            paintTexto.setTextAlign(Paint.Align.RIGHT);
+            paintTexto.setTextSize(20f);
+
             canvas.drawText(
-                    niveis[i] + " Kcal",
-                    10,
-                    y + 10,
+                    textoNivel,
+                    margemEsquerda - 8f,
+                    y + 7f,
                     paintTexto
             );
         }
 
+        // =========================
+        // DISTÂNCIA ENTRE PONTOS
+        // =========================
+
+        float distanciaEntrePontos;
+
+        if (valores.length > 1) {
+
+            distanciaEntrePontos =
+                    larguraGrafico / (valores.length - 1);
+
+        } else {
+
+            distanciaEntrePontos = 0;
+        }
 
         // =========================
-        // LINHA DO GRÁFICO
+        // LINHA
         // =========================
 
         Path caminho = new Path();
-
-        float espacamento =
-                larguraGrafico / (valores.length - 1);
 
         for (int i = 0; i < valores.length; i++) {
 
             float x =
                     margemEsquerda +
-                            i * espacamento;
+                            (distanciaEntrePontos * i);
 
             float porcentagem =
-                    valores[i] / 3000f;
+                    valores[i] / valorMaximo;
+
+            if (porcentagem > 1f) {
+                porcentagem = 1f;
+            }
+
+            if (porcentagem < 0f) {
+                porcentagem = 0f;
+            }
 
             float y =
                     margemSuperior +
@@ -189,59 +187,164 @@ public class GraficoEvolucaoView extends View {
 
                 caminho.lineTo(x, y);
             }
-
-
-            // PONTO FINAL
-
-            if (i == valores.length - 1) {
-
-                canvas.drawCircle(
-                        x,
-                        y,
-                        10,
-                        paintPonto
-                );
-            }
         }
 
-        canvas.drawPath(
-                caminho,
-                paintLinha
-        );
+        canvas.drawPath(caminho, paintLinha);
 
+        // =========================
+        // PONTOS
+        // =========================
+
+        for (int i = 0; i < valores.length; i++) {
+
+            float x =
+                    margemEsquerda +
+                            (distanciaEntrePontos * i);
+
+            float porcentagem =
+                    valores[i] / valorMaximo;
+
+            if (porcentagem > 1f) {
+                porcentagem = 1f;
+            }
+
+            if (porcentagem < 0f) {
+                porcentagem = 0f;
+            }
+
+            float y =
+                    margemSuperior +
+                            alturaGrafico -
+                            (porcentagem * alturaGrafico);
+
+            canvas.drawCircle(
+                    x,
+                    y,
+                    6f,
+                    paintPonto
+            );
+        }
 
         // =========================
         // DIAS
         // =========================
 
-        for (int i = 0; i < dias.length; i++) {
+        paintTexto.setTextAlign(Paint.Align.CENTER);
+        paintTexto.setTextSize(20f);
+
+        for (int i = 0;
+             i < dias.length && i < valores.length;
+             i++) {
 
             float x =
                     margemEsquerda +
-                            i * espacamento;
+                            (distanciaEntrePontos * i);
 
             canvas.drawText(
                     dias[i],
-                    x - 8,
-                    altura - 25,
+                    x,
+                    altura - 20f,
                     paintTexto
             );
         }
     }
 
+    // =========================
+    // CARBOIDRATOS
+    // =========================
+
+    public void mostrarCarbs() {
+
+        valores = new float[]{
+                120, 180, 160, 220,
+                145, 250, 190, 275,
+                210, 300, 235, 315,
+                280, 211
+        };
+
+        unidade = "g";
+        valorMaximo = 349f;
+
+        // Mesma cor do progress_red do Histórico
+        paintLinha.setColor(0xFFE65B68);
+        paintPonto.setColor(0xFFE65B68);
+
+        invalidate();
+    }
+
+    // =========================
+    // GORDURAS
+    // =========================
+
+    public void mostrarGorduras() {
+
+        valores = new float[]{
+                45, 80, 72, 95,
+                60, 110, 88, 120,
+                100, 135, 92, 150,
+                130, 165
+        };
+
+        unidade = "g";
+        valorMaximo = 175f;
+
+        // Mesma cor do progress_blue do Histórico
+        paintLinha.setColor(0xFF3295D5);
+        paintPonto.setColor(0xFF3295D5);
+
+        invalidate();
+    }
+
+    // =========================
+    // PROTEÍNAS
+    // =========================
+
+    public void mostrarProteinas() {
+
+        valores = new float[]{
+                70, 110, 95, 130,
+                85, 145, 125, 160,
+                140, 175, 155, 190,
+                180, 205
+        };
+
+        unidade = "g";
+        valorMaximo = 209f;
+
+        // Mesma cor do progress_purple do Histórico
+        paintLinha.setColor(0xFFB64ACB);
+        paintPonto.setColor(0xFFB64ACB);
+
+        invalidate();
+    }
 
     // =========================
     // ATUALIZAR DADOS
     // =========================
 
-    public void atualizarDados(float[] novosValores) {
+    public void atualizarDados(
+            float[] novosValores,
+            float novoValorMaximo,
+            String novaUnidade
+    ) {
 
-        if (novosValores != null &&
-                novosValores.length > 1) {
+        valores = novosValores;
+        valorMaximo = novoValorMaximo;
+        unidade = novaUnidade;
 
-            valores = novosValores;
+        invalidate();
+    }
 
-            invalidate();
+    // =========================
+    // FORMATAR VALORES
+    // =========================
+
+    private String formatarValor(float valor) {
+
+        if (valor == (int) valor) {
+            return String.valueOf((int) valor);
         }
+
+        return String.valueOf(valor);
     }
 }

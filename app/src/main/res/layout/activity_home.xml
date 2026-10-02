@@ -284,6 +284,7 @@
             <!-- CARBOIDRATOS -->
 
             <LinearLayout
+                android:id="@+id/cardCarboidratos"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="4dp"
@@ -325,6 +326,7 @@
             <!-- PROTEÍNA -->
 
             <LinearLayout
+                android:id="@+id/cardProteina"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="4dp"
@@ -332,7 +334,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/card_background"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -367,13 +371,16 @@
             <!-- GORDURA -->
 
             <LinearLayout
+                android:id="@+id/cardGordura"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/card_background"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -6,4 +6,5 @@
     <item name="btnMenuPerfil" type="id" />
     <item name="main" type="id" />
     <item name="btnPerfil" type="id" />
+    <item name="btnCarbs" type="id" />
 </resources>
