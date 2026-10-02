@@ -29,15 +29,16 @@ public class SplashActivity extends AppCompatActivity {
 
         videoView.start();
 
-        videoView.setOnCompletionListener(mp -> {
+        new android.os.Handler().postDelayed(() -> {
 
             Intent intent = new Intent(
                     SplashActivity.this,
-                    CadastroActivity.class
+                    LoginActivity.class
             );
 
             startActivity(intent);
             finish();
-        });
+
+        }, 1000);
     }
 }

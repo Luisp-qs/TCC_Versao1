@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="35dp">
+
+        <!-- LOGO -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logobalance"
+            android:contentDescription="Logo Balance Tech" />
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:text="Qual o seu objetivo?"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- PERDER PESO -->
+        <Button
+            android:id="@+id/btnPerderPeso"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/btn_green"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:text="Perder peso"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_color"
+            android:textSize="16sp" />
+
+        <!-- GANHAR MÚSCULO -->
+        <Button
+            android:id="@+id/btnGanharMusculo"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/btn_green"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:text="Ganhar músculo"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_color"
+            android:textSize="16sp" />
+
+        <!-- MANTER PESO -->
+        <Button
+            android:id="@+id/btnManterPeso"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/btn_green"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:text="Manter peso"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_color"
+            android:textSize="16sp" />
+
+        <!-- COMER MAIS SAUDÁVEL -->
+        <Button
+            android:id="@+id/btnComerSaudavel"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/btn_green"
+            android:gravity="center_vertical|start"
+            android:paddingStart="20dp"
+            android:text="Comer mais saudável"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_color"
+            android:textSize="16sp" />
+
+        <!-- BOTÃO CONTINUE -->
+        <Button
+            android:id="@+id/btnObjetivo"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="@color/btn_green"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_text_color"
+            android:textSize="18sp"
+            app:cornerRadius="10dp" />
+
+    </LinearLayout>
+
+</ScrollView>

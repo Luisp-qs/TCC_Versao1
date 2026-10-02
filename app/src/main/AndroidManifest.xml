@@ -27,6 +27,53 @@
 
         </activity>
 
+        <!-- ========================= -->
+        <!-- LOGIN -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- ESQUECEU A SENHA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".EsqueceuSenha"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- VERIFICAÇÃO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".VerificacaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- NOVA SENHA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".NovaSenhaActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- QUESTIONARIO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".QuestionarioActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- QUESTIONARIO PESSOAL -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".QuestionarioPessoalActivity"
+            android:exported="false" />
 
         <!-- ========================= -->
         <!-- CADASTRO -->
