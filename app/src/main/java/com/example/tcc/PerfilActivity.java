@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class PerfilActivity extends AppCompatActivity {
 
     private ImageButton btnMenu;
-    private ImageButton btnPerfil;
 
     private Button btnSair;
     private Button btnSairConta;
@@ -37,17 +36,6 @@ public class PerfilActivity extends AppCompatActivity {
             // Não usar finish().
             // O Perfil continua atrás do menu.
             startActivity(intent);
-        });
-
-
-        // =========================
-        // BOTÃO PERFIL
-        // =========================
-
-        btnPerfil = findViewById(R.id.btnPerfil);
-
-        btnPerfil.setOnClickListener(v -> {
-            // O usuário já está na tela de Perfil.
         });
 
 

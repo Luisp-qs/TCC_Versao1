@@ -18,7 +18,7 @@
     <!-- Painel do menu -->
     <ScrollView
         android:id="@+id/painelMenu"
-        android:layout_width= "240dp"
+        android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#FFFFFF"
@@ -243,37 +243,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="Evolução"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <!-- PERFIL -->
-            <LinearLayout
-                android:id="@+id/menuPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/menu_item_background"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:src="@drawable/ic_perfil"
-                    android:scaleType="fitCenter"
-                    android:contentDescription="Perfil" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="Perfil"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
 
