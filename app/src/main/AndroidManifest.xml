@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- PERMISSÕES BLUETOOTH -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <application
+        android:allowBackup="true"
+        android:label="Balance Tech"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TCC">
+
+        <!-- ========================= -->
+        <!-- SPLASH / TELA INICIAL -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- ========================= -->
+        <!-- SPLASH / TELA BEM VINDO -->
+        <!-- ========================= -->
+
+        <activity android:name=".BemVindoActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- LOGIN -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- ESQUECEU A SENHA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".EsqueceuSenha"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- VERIFICAÇÃO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".VerificacaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- NOVA SENHA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".NovaSenhaActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- QUESTIONARIO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".QuestionarioActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- QUESTIONARIO PESSOAL -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".QuestionarioPessoalActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- CADASTRO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".CadastroActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- HOME -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- SOBRE NÓS -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".SobreNosActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- MENU -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme_TCC_Menu" />
+
+
+        <!-- ========================= -->
+        <!-- PERFIL -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- EXERCÍCIOS -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".ExercicioActivity"
+            android:exported="false" />
+
+
+        <!-- ========================= -->
+        <!-- CONEXÃO COM A BALANÇA -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".ConexaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- REFEIÇÔES -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".RefeicoesActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- EVOLUÇÂO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".EvolucaoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- HISTÓRICO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".HistoricoActivity"
+            android:exported="false" />
+
+        <!-- ========================= -->
+        <!-- MONTEPRATO -->
+        <!-- ========================= -->
+
+        <activity
+            android:name=".MontePratoActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
