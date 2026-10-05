@@ -14,7 +14,7 @@
         android:padding="16dp">
 
         <!-- ========================= -->
-        <!-- TOPO -->
+        <!-- CABEÇALHO -->
         <!-- ========================= -->
 
         <RelativeLayout
@@ -35,6 +35,17 @@
                 android:padding="6dp"
                 android:src="@drawable/ic_menu" />
 
+            <!-- TÍTULO -->
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Refeições"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <!-- PERFIL - DIREITA -->
 
@@ -50,20 +61,6 @@
                 android:src="@drawable/ic_perfil_home" />
 
         </RelativeLayout>
-
-
-        <!-- ========================= -->
-        <!-- TÍTULO -->
-        <!-- ========================= -->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Refeições"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
 
         <!-- ========================= -->

@@ -86,12 +86,7 @@ public class EvolucaoActivity extends AppCompatActivity {
 
         btnCarbs.setOnClickListener(v -> {
 
-            graficoEvolucao.mostrarCarbs();
-
-            txtMeta.setText("349 g");
-            txtAtual.setText("211 g");
-
-            selecionarBotao(btnCarbs);
+            mostrarCarboidratos();
         });
 
         // =========================
@@ -100,12 +95,7 @@ public class EvolucaoActivity extends AppCompatActivity {
 
         btnGorduras.setOnClickListener(v -> {
 
-            graficoEvolucao.mostrarGorduras();
-
-            txtMeta.setText("175 g");
-            txtAtual.setText("165 g");
-
-            selecionarBotao(btnGorduras);
+            mostrarGorduras();
         });
 
         // =========================
@@ -114,17 +104,42 @@ public class EvolucaoActivity extends AppCompatActivity {
 
         btnProteinas.setOnClickListener(v -> {
 
-            graficoEvolucao.mostrarProteinas();
-
-            txtMeta.setText("209 g");
-            txtAtual.setText("205 g");
-
-            selecionarBotao(btnProteinas);
+            mostrarProteinas();
         });
 
         // =========================
-        // INICIAL
+        // GRÁFICO RECEBIDO DA HOME
         // =========================
+
+        String graficoRecebido = getIntent().getStringExtra("grafico");
+
+        if (graficoRecebido == null) {
+
+            // Se entrou normalmente pela tela Evolução,
+            // começa mostrando carboidratos.
+
+            mostrarCarboidratos();
+
+        } else if (graficoRecebido.equals("proteinas")) {
+
+            mostrarProteinas();
+
+        } else if (graficoRecebido.equals("gorduras")) {
+
+            mostrarGorduras();
+
+        } else {
+
+            // "carboidratos"
+            mostrarCarboidratos();
+        }
+    }
+
+    // =========================
+    // MOSTRAR CARBOIDRATOS
+    // =========================
+
+    private void mostrarCarboidratos() {
 
         graficoEvolucao.mostrarCarbs();
 
@@ -132,6 +147,34 @@ public class EvolucaoActivity extends AppCompatActivity {
         txtAtual.setText("211 g");
 
         selecionarBotao(btnCarbs);
+    }
+
+    // =========================
+    // MOSTRAR GORDURAS
+    // =========================
+
+    private void mostrarGorduras() {
+
+        graficoEvolucao.mostrarGorduras();
+
+        txtMeta.setText("175 g");
+        txtAtual.setText("165 g");
+
+        selecionarBotao(btnGorduras);
+    }
+
+    // =========================
+    // MOSTRAR PROTEÍNAS
+    // =========================
+
+    private void mostrarProteinas() {
+
+        graficoEvolucao.mostrarProteinas();
+
+        txtMeta.setText("209 g");
+        txtAtual.setText("205 g");
+
+        selecionarBotao(btnProteinas);
     }
 
     // =========================
